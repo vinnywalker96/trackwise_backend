@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
 }
 );  
 
-router.post('/register', UserController.register);
-router.post('/login', UserController.login);
-router.get('/users/profile', validateToken, UserController.getCurrentUser);
+router.post('api//register', UserController.register);
+router.post('api//login', UserController.login);
+router.get('api//users/profile', validateToken, UserController.getCurrentUser);
 // router.put('/users/:id', UserController.updateUser);
 
 // router.get('/users', UserController.getAll);
