@@ -1,13 +1,15 @@
 const express = require('express');
 const connection = require('./utils/db');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 const router = require('./routes/index');
 
 const app = express();
 
 const port = 3001 || process.env.PORT;
 app.use(express.json());
+app.use(cors());
+app
 app.use(router);
 const uri = process.env.DATABASE_URL;
 connection(uri);
