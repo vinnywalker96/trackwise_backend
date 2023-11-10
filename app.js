@@ -1,6 +1,10 @@
 const express = require("express");
+const connection = require("./utils/db");
+
 const app = express();
 const port = process.env.PORT || 3001;
+const uri = process.env.DATABASE_URL;
+connection(uri);
 
 app.get("/", (req, res) => res.status(200).send("Hello World!"));
 
